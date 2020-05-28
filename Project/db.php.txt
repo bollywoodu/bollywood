@@ -1,0 +1,38 @@
+<?php include 'db.php';?>
+ 
+<?php
+ 
+// create a variable
+$name=$_POST['name'];
+$gender=$_POST['gender'];
+$email=$_POST['email'];
+$password=$_POST['password'];
+ 
+//Execute the query
+ 
+mysqli_query($connect,"INSERT INTO appointment(name,gender,email,password)
+				VALUES('$name','$gender','$email','$password')");
+
+if(mysqli_affected_rows($connect)>0)
+{
+	echo "<p>Appointment Booked</p>";
+	mysqli_query($connect,"select * from appointment");
+	echo 
+	"--------------------------------<br>";
+	echo "<a href='appointment.php'>Go Back</a>";
+} 
+else 
+{
+	echo "Appointment NOT Booked";
+	echo mysqli_error ($connect);
+}
+?>
+<?php
+$connect=mysqli_connect('localhost','root','','appointment');
+ 
+if(mysqli_connect_errno($connect))
+{
+		echo 'Failed to connect';
+}
+ 
+?>

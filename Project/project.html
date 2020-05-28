@@ -1,0 +1,433 @@
+<!doctype html>
+<html>
+<head>
+
+<title>Bollywood Buzz</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+      body 
+      {background-color:orange;} 
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+ 
+
+
+
+
+
+
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+<div class="topnav">
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Type Here.." name="search">
+      <button type="submit"><i class="fa fa-search">Search</i></button>
+    </form>
+  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="file:///C:/Users/Utkarsh/OneDrive/Desktop/Project/su1.html">Signup</a>
+  <a href="file:///C:/Users/Utkarsh/OneDrive/Desktop/Project/lf.html">Login</a>
+  <
+  <a href="#">Contact</a>
+</div>
+
+<div id="main">
+  
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776</span>
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<div class="navbar">
+  <a href="file:///C:/Users/Utkarsh/OneDrive/Desktop/Project/project.html#home">Home</a>
+  <a href="file:///C:/Users/Utkarsh/OneDrive/Desktop/Project/project2.html">Life History</a>
+  <div class="dropdown">
+    <button class="dropbtn">Content 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      
+      <a href="file:///C:/Users/Utkarsh/OneDrive/Desktop/Project/project1.html">Upcoming Movie Trailers</a>
+<a href="file:///C:/Users/Utkarsh/OneDrive/Desktop/Project/project2.html">Life History</a>      
+
+    </div>
+  </div> 
+
+</div>
+
+
+<H1 style="text-align:center;font-size:300%;font-family:ROG Fonts"><u>Bollywood</u></H1>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 5</div>
+  <img src="r.jpg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 5</div>
+  <img src="artsfon.com-89709.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 5</div>
+  <img src="artsfon.com-97618.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">4 / 5</div>
+  <img src="hd-home-index-image-haider-2.jpg" style="width:100%">
+  <div class="text">Caption Four</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 5</div>
+  <img src="artsfon.com-97420.jpg" style="width:100%">
+  <div class="text">Caption Five</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span> 
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<p style="font-size:150%;color:blue;font-family:MV Boli">Hindi cinema, often metonymously referred to as Bollywood and formerly known as Bombay cinema,is the Indian Hindi-language film industry based in Mumbai 
+(formerly Bombay), Maharashtra.The term is a portmanteau of "Bombay" and "Hollywood". The industry is related to Tamil film industry (Kollywood), Telugu film 
+industry (Tollywood) and other industries, making up Indian Cinema – the world's largest.Indian cinema is the world's largest film industry in film production, 
+with an annual output of 1,986 feature films in 2017. Bollywood is its largest film producer, with 364 Hindi films produced in 2017. Bollywood represents 43 per
+cent of Indian net box-office revenue; Tamil and Telugu cinema represent 36 percent, and the remaining regional cinema constituted 21 percent in 2014.Bollywood is
+ one of the largest centres of film production in the world. In 2001 ticket sales, Indian cinema (including Bollywood) reportedly sold an estimated 
+3.6 billion tickets worldwide, compared to Hollywood's 2.6 billion tickets sold. Bollywood films tend to use a colloquial dialect of Hindi-Urdu 
+(or Hindustani), mutually intelligible by Hindi and Urdu speakers, and modern Bollywood films increasingly incorporate elements of Hinglish.</p>
+<marquee><img src="download.jpg" width="500" height="450" align="center"></marquee>
+<p align="center">
+<a href="file:///C:/Users/Utkarsh/OneDrive/Desktop/Project/project.html"><Font size="4" color="#FF0000">[1]</font></a>
+<a href="file:///C:/Users/Utkarsh/OneDrive/Desktop/Project/project1.html"><Font size="4" color="#FF0000">[2]</font></a>
+<a href="file:///C:/Users/Utkarsh/OneDrive/Desktop/Project/project2.html"><Font size="4" color="#FF0000">[3]</font></a>
+<a href="file:///C:/Users/Utkarsh/OneDrive/Desktop/Project/project3.html"><Font size="4" color="#FF0000">[4]</font></a></p>
+
+</body>
+</html>
